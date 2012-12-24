@@ -4,4 +4,4 @@ module Glowing
   end
 end
 
-require_relative 'rails/array'
+require 'rails/array'
