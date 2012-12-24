@@ -8,11 +8,12 @@ Gem::Specification.new do |gem|
   gem.version       = Glowing::Archer::VERSION
   gem.authors       = ["John Griffiths"]
   gem.email         = ["john@johnantoni.com"]
-  gem.description   = %q{collection of frequently used core extensions for ruby}
+  gem.description   = %q{collection of frequently used core extensions for ruby-on-rails}
   gem.summary       = %q{addons to help arrays, strings, etc. i keep on using}
   gem.homepage      = "https://github.com/johnantoni/glowing-archer"
 
   gem.files         = `git ls-files`.split($/)
+
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
