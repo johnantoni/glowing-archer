@@ -1,6 +1,7 @@
 module Glowing
   module Archer
 
+    # generate html for bootstrap badges (tags)
     def bootstrap_badges(badges, style = "")
       style = (" " + style) unless style.nil_or_empty?
       html = ""
@@ -11,6 +12,11 @@ module Glowing
       return html.html_safe
     end
 
+    # generate unique key http://railscasts.com/episodes/124-beta-invitations
+    def invite_code
+      Digest::SHA1.hexdigest([Time.now, rand].join)
+    end
+    
   end
 end
 
