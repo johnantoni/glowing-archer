@@ -1,4 +1,17 @@
 String.class_eval do
+
+  # generate html for bootstrap badges (tags)
+  def bootstrap_badges(style = "")
+    badges = self
+    style = (" " + style) unless style.nil_or_empty?
+    html = ""
+    badges.split(",").each do |badge|
+      badge = badge.strip
+      html << "<span class=\"label#{style}\">#{badge.html_safe!}</span> " unless badge.nil_or_empty?
+    end
+    return html.html_safe
+  end
+
   def to_bool
     return true if self == true || self =~ (/(true|t|yes|y|1)$/i)
     return false if self == false || self.blank? || self =~ (/(false|f|no|n|0)$/i)
