@@ -1,27 +1,19 @@
 module Glowing
   module Archer
 
-    # generate html for bootstrap badges (tags)
-    def bootstrap_badges(badges, style = "")
-      style = (" " + style) unless style.nil_or_empty?
-      html = ""
-      badges.split(",").each do |badge|
-        badge = badge.strip
-        html << "<span class=\"label#{style}\">#{badge.html_safe!}</span> " unless badge.nil_or_empty?
-      end
-      return html.html_safe
-    end
-
     # generate invite code http://railscasts.com/episodes/124-beta-invitations
     # => "bf35184b0e7ebb5baad116bfe4a8dbdfb58277d2"
-    def invite_code
+    def self.build_invite
       Digest::SHA1.hexdigest([Time.now, rand].join)
     end
     
     # generate random key #2 http://stackoverflow.com/questions/6021372/best-way-to-create-unique-token-in-rails
     # => "Sk349WNovoUDRZ930Uha"
-    def secure_key(length = 15)
+    def self.build_key(length = 15)
       SecureRandom.base64(length).tr('+/=', '0aZ').strip.delete("\n")
+    end
+    
+    def self.guid
     end
     
   end
