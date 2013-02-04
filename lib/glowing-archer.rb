@@ -12,9 +12,16 @@ module Glowing
       return html.html_safe
     end
 
-    # generate unique key http://railscasts.com/episodes/124-beta-invitations
+    # generate invite code http://railscasts.com/episodes/124-beta-invitations
+    # => "bf35184b0e7ebb5baad116bfe4a8dbdfb58277d2"
     def invite_code
       Digest::SHA1.hexdigest([Time.now, rand].join)
+    end
+    
+    # generate random key #2 http://stackoverflow.com/questions/6021372/best-way-to-create-unique-token-in-rails
+    # => "Sk349WNovoUDRZ930Uha"
+    def secure_key(length = 15)
+      SecureRandom.base64(length).tr('+/=', '0aZ').strip.delete("\n")
     end
     
   end
