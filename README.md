@@ -1,7 +1,5 @@
 # Glowing::Archer
 
-TODO: Write a gem description
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -32,4 +30,4 @@ TODO: Write usage instructions here
 
 Check the /spec, improve and run with
 
-    rspec
+    $ rspec
