@@ -7,7 +7,7 @@ Array.class_eval do
     delete_if {|x| x == nil || x == ''}
   end
 
-  def to_csv(sep = ', ')
-    self.join(sep)
+  def to_csv
+    self.join(", ")
   end
 end
