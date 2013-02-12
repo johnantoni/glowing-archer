@@ -6,4 +6,8 @@ Array.class_eval do
   def drop_nil
     delete_if {|x| x == nil || x == ''}
   end
+
+  def to_csv(sep = ', ')
+    self.drop_nil.join(sep)
+  end
 end
