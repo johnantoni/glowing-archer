@@ -8,6 +8,6 @@ Array.class_eval do
   end
 
   def to_csv(sep = ', ')
-    [*self].join(sep)
+    self.join(sep)
   end
 end
