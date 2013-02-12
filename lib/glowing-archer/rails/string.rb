@@ -11,6 +11,10 @@ String.class_eval do
     end
     return html.html_safe
   end
+  
+  def to_tags
+    self.split(",").drop_nil
+  end
 
   def to_bool
     return true if self == true || self =~ (/(true|t|yes|y|1)$/i)
@@ -66,6 +70,10 @@ String.class_eval do
   # get first character of string and titleize
   def initial!
     self.initial.upcase + "."
+  end
+
+  def capitalize_first_char
+    self.sub(/^(.)/) { $1.capitalize }
   end
 
 end
