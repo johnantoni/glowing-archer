@@ -2,6 +2,9 @@ module BooleanHelpers
   def humanize
     self ? "yes" : "no"
   end
+  def yesno
+    self ? "Yes" : "No"
+  end
 end
 
 class FalseClass
@@ -11,4 +14,3 @@ end
 class TrueClass
   include BooleanHelpers
 end
-
